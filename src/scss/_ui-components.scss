@@ -1,0 +1,151 @@
+/* nav bar styles */
+.top-nav-bar {
+    height: 60px; 
+}
+
+.icon-separator {
+    border-right: 2px solid #f2f2f3;
+}
+
+/* map panel */
+.map-canvas-panel-ani {
+    transition: margin-right .5s; // transform: translateZ(0px);
+    // -webkit-transform:translateZ(0px);
+    // -ms-transform:translateZ(0px);
+    position: relative;
+}
+
+.det-panel {
+    transition: margin-right .5s;
+}
+
+.map-nav-bar{
+    position: absolute;
+    z-index: 1;
+    top: $spacer;
+    .nav-title{
+        top: $spacer;
+        left: $spacer;
+        a {
+            color: $white;
+        }
+        span {
+            font-weight: 200;
+        }
+    }
+    .nav-buttons{
+        color: $white;
+        // top: $spacer;
+        // right: $spacer;
+        .btn-success{
+            color: $white;
+        }
+        .btn-light{
+            color: $gray-900;
+        }
+    }
+}
+
+/* plant list table style */
+.list-container{
+    padding: 100px 50px 50px 50px;
+    .table-container{
+        width: 100%;
+    }
+}
+
+/* Dessision Tree Styles */
+.circle-dt {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+/* plant detail component Styles */
+
+.qulity-box-width {
+    width: 26%;
+}
+
+.equ-list {
+    
+    .product-list{
+        font-size: 14px;
+        .batch-list{
+            font-size: 14px;
+        }
+    }
+}
+
+/* map css */
+.map-content {
+    min-width: 170px;
+    .title{
+        font-size: 16px;
+    }
+    .clicked {
+        // background-color: $red;
+        color: $white;
+    }
+    .list{
+        color:$gray-500;
+    }
+    .value{
+        font-size: 16px;
+        color: $red;
+    }
+
+}
+
+/* max view */
+.min-box {
+    height : 120px;
+    .title {
+
+    }
+}
+
+
+
+
+/* Notification */
+.form-secondry-text{
+    font-size: 13px;
+    color: $gray-600;
+}
+
+.error {
+    font-size:14px;
+    font-weight: 700;
+}
+
+.serch-box {
+    width:150px
+}
+
+
+.quadrant{
+    .data-table{
+        height: 300px;
+        overflow: scroll;
+        button{
+            height: 30px;
+            font-size: 13px;
+        }
+    }
+    
+}
+
+
+
+.not-tbl-col-1{
+    width: 75px;
+}
+.not-tbl-col-2{
+    width: 125px;
+}
+.not-tbl-col-2{
+    width: 200px;
+}
+        

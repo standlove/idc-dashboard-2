@@ -1,0 +1,376 @@
+{
+  "graphData": {
+    "daily": [
+      {
+        "id": "1",
+        "date": "April 15",
+        "batchYield": {
+          "value": "100",
+          "isGood": true
+        }
+      },
+      {
+        "id": "2",
+        "date": "April 16",
+        "batchYield": {
+          "value": "84",
+          "isGood": true
+        }
+      },
+      {
+        "id": "3",
+        "date": "April 17",
+        "batchYield": {
+          "value": "34",
+          "isGood": false
+        }
+      },
+      {
+        "id": "4",
+        "date": "April 18",
+        "batchYield": {
+          "value": "56",
+          "isGood": false
+        }
+      },
+      {
+        "id": "5",
+        "date": "April 19",
+        "batchYield": {
+          "value": "44",
+          "isGood": false
+        }
+      },
+      {
+        "id": "6",
+        "date": "April 20",
+        "batchYield": {
+          "value": "79",
+          "isGood": true
+        }
+      },
+      {
+        "id": "7",
+        "date": "April 21",
+        "batchYield": {
+          "value": "81",
+          "isGood": true
+        }
+      },
+      {
+        "id": "8",
+        "date": "April 22",
+        "batchYield": {
+          "value": "14",
+          "isGood": false
+        }
+      },
+      {
+        "id": "9",
+        "date": "April 23",
+        "batchYield": {
+          "value": "54",
+          "isGood": false
+        }
+      },
+      {
+        "id": "10",
+        "date": "April 24",
+        "batchYield": {
+          "value": "80",
+          "isGood": true
+        }
+      },
+      {
+        "id": "11",
+        "date": "April 25",
+        "batchYield": {
+          "value": "84",
+          "isGood": true
+        }
+      },
+      {
+        "id": "12",
+        "date": "April 26",
+        "batchYield": {
+          "value": "84",
+          "isGood": true
+        }
+      },
+      {
+        "id": "13",
+        "date": "April 27",
+        "batchYield": {
+          "value": "85",
+          "isGood": true
+        }
+      },
+      {
+        "id": "14",
+        "date": "April 28",
+        "batchYield": {
+          "value": "89",
+          "isGood": true
+        }
+      },
+      {
+        "id": "15",
+        "date": "April 29",
+        "batchYield": {
+          "value": "60",
+          "isGood": false
+        }
+      }
+    ],
+    "weekly": [
+      {
+        "id": "1",
+        "week": "April-week1",
+        "batchYield": {
+          "value": "76",
+          "isGood": true
+        }
+      },
+      {
+        "id": "2",
+        "week": "April-week2",
+        "batchYield": {
+          "value": "70",
+          "isGood": true
+        }
+      },
+      {
+        "id": "3",
+        "week": "April-week3",
+        "batchYield": {
+          "value": "99",
+          "isGood": true
+        }
+      },
+      {
+        "id": "4",
+        "week": "April-week4",
+        "batchYield": {
+          "value": 87,
+          "isGood": true
+        }
+      },
+      {
+        "id": "5",
+        "week": "May-week1",
+        "batchYield": {
+          "value": "62",
+          "isGood": false
+        }
+      },
+      {
+        "id": "6",
+        "week": "May-week2",
+        "batchYield": {
+          "value": "78",
+          "isGood": true
+        }
+      },
+      {
+        "id": "7",
+        "week": "May-week3",
+        "batchYield": {
+          "value": "70",
+          "isGood": true
+        }
+      },
+      {
+        "id": "8",
+        "week": "May-week4",
+        "batchYield": {
+          "value": "28",
+          "isGood": false
+        }
+      },
+      {
+        "id": "9",
+        "week": "June-week1",
+        "batchYield": {
+          "value": "69",
+          "isGood": false
+        }
+      },
+      {
+        "id": "10",
+        "week": "June-week2",
+        "batchYield": {
+          "value": "95",
+          "isGood": true
+        }
+      }
+    ],
+    "monthly": [
+      {
+        "id": "1",
+        "month": "January",
+        "batchYield": {
+          "value": "78",
+          "isGood": true
+        }
+      },
+      {
+        "id": "2",
+        "month": "February",
+        "batchYield": {
+          "value": "91",
+          "isGood": true
+        }
+      },
+      {
+        "id": "3",
+        "month": "March",
+        "batchYield": {
+          "value": "78",
+          "isGood": true
+        }
+      },
+      {
+        "id": "4",
+        "month": "April",
+        "batchYield": {
+          "value": "54",
+          "isGood": false
+        }
+      },
+      {
+        "id": "5",
+        "month": "May",
+        "batchYield": {
+          "value": "90",
+          "isGood": true
+        }
+      },
+      {
+        "id": "6",
+        "month": "June",
+        "batchYield": {
+          "value": "90",
+          "isGood": true
+        }
+      },
+      {
+        "id": "7",
+        "month": "July",
+        "batchYield": {
+          "value": "89",
+          "isGood": true
+        }
+      },
+      {
+        "id": "8",
+        "month": "August",
+        "batchYield": {
+          "value": "80",
+          "isGood": true
+        }
+      },
+      {
+        "id": "9",
+        "month": "September",
+        "batchYield": {
+          "value": "45",
+          "isGood": false
+        }
+      },
+      {
+        "id": "10",
+        "month": "October",
+        "batchYield": {
+          "value": "88",
+          "isGood": true
+        }
+      },
+      {
+        "id": "11",
+        "month": "November",
+        "batchYield": {
+          "value": "93",
+          "isGood": true
+        }
+      },
+      {
+        "id": "12",
+        "month": "December",
+        "batchYield": {
+          "value": "23",
+          "isGood": false
+        }
+      }
+    ]
+  },
+  "topProducts": [
+    {
+      "id": "1",
+      "productName": "W757M001",
+      "plantName": "Shanghi",
+      "color": "#ff0000"
+    },
+    {
+      "id": "2",
+      "productName": "W117A",
+      "plantName": "London",
+      "color": "#ff0000"
+    },
+    {
+      "id": "3",
+      "productName": "W117B",
+      "plantName": "Paris",
+      "color": "#ff0000"
+    },
+    {
+      "id": "4",
+      "productName": "M802LI50",
+      "plantName": "Chicago",
+      "color": "#ff6600"
+    },
+    {
+      "id": "5",
+      "productName": "D9001A1",
+      "plantName": "Los Angeles",
+      "color": "#ff6600"
+    }
+  ],
+  "dropHistory": [
+    {
+      "id": "1",
+      "date": "April 15",
+      "productName": "M8001B",
+      "yield": "30"
+    },
+    {
+      "id": "2",
+      "date": "March 15",
+      "productName": "W923L46A",
+      "yield": "20"
+    },
+    {
+      "id": "3",
+      "date": "March 3",
+      "productName": "W923L45",
+      "yield": "25"
+    },
+    {
+      "id": "4",
+      "date": "February 25",
+      "productName": "W117A",
+      "yield": "44"
+    },
+    {
+      "id": "5",
+      "date": "February 2",
+      "productName": "M8002B",
+      "yield": "12"
+    },
+    {
+      "id": "6",
+      "date": "January 30",
+      "productName": "D9001A2",
+      "yield": "49"
+    }
+  ]
+}

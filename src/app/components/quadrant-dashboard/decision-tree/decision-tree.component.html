@@ -1,0 +1,112 @@
+<div class="row white-bg-wrapper m-2">
+  <div class="col white-bg-wrapper py-3">
+
+    <div class="row title-border-bottom ">
+      <div class="col">
+        <span class="align-middle">
+          <a class="btn btn-primary">
+            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          </a>
+        </span>
+
+        <span class="font-weight-bold align-middle">Decision Tree</span>
+      </div>
+
+      <div class="col-auto tab-header" (click)="showVariableRank()">
+        <div class="m-0 h-100">
+          <div class="align-middle pb-3 h-75 {{isShowVariableRank ? 'text-success' : ''}}">
+            Variable Rank</div>
+          <div class="align-bottom mx-auto w-75 h-25 p-1 {{isShowVariableRank ? 'tab-border-success' : ''}} "></div>
+        </div>
+      </div>
+
+      <div class="col-auto tab-header" (click)="showRules()">
+        <div class="m-0 h-100">
+          <div class="align-middle pb-3 h-75 {{isShowRules ? 'text-success' : ''}}">Rules</div>
+          <div class="align-bottom mx-auto w-75 h-25 p-1 {{isShowRules ? 'tab-border-success' : ''}} "></div>
+        </div>
+      </div>
+
+      <div class="col-auto tab-header" (click)="showDecisionTree()">
+        <div class="m-0 h-100">
+          <div class="align-middle pb-3 h-75 {{isShowDecisionTree ? 'text-success' : ''}}">Decision Tree</div>
+          <div class="align-bottom mx-auto w-75 h-25 p-1 {{isShowDecisionTree ? 'tab-border-success' : ''}} "></div>
+        </div>
+      </div>
+      <div *ngIf="!isLoadedMiqDashBoard" class="col-auto" (click)="maximize()">
+        <span class="align-middle">
+          <i class="fa fa-window-maximize" aria-hidden="true"></i>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="w-100"></div>
+
+    <div class="col data-table">
+      <div *ngIf="vrDataSource && isShowVariableRank" >
+        <mat-table #table [dataSource]="vrDataSource" matSort>
+
+          <ng-container cdkColumnDef="rank">
+            <mat-header-cell *cdkHeaderCellDef mat-sort-header> Rank </mat-header-cell>
+            <mat-cell *cdkCellDef="let rank">
+              <div class="circle-dt" [style.background]="rank.highlightColor">
+                {{rank.rank}}
+              </div>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container cdkColumnDef="paramName">
+            <mat-header-cell *cdkHeaderCellDef mat-sort-header> Parameter Name </mat-header-cell>
+            <mat-cell *cdkCellDef="let rank"> {{rank.paramName}} </mat-cell>
+          </ng-container>
+
+          <ng-container cdkColumnDef="dtValue">
+            <mat-header-cell *cdkHeaderCellDef mat-sort-header> DT Value </mat-header-cell>
+            <mat-cell *cdkCellDef="let rank"> {{rank.dtValue}} </mat-cell>
+          </ng-container>
+
+          <ng-container cdkColumnDef="variableValue">
+            <mat-header-cell *cdkHeaderCellDef mat-sort-header> Variable Value </mat-header-cell>
+            <mat-cell *cdkCellDef="let rank"> {{rank.variableValue}} </mat-cell>
+          </ng-container>
+
+
+          <mat-header-row *cdkHeaderRowDef="vrDisplayedColumns"></mat-header-row>
+          <mat-row *cdkRowDef="let row; columns: vrDisplayedColumns;"></mat-row>
+
+        </mat-table>
+
+      </div>
+
+      <div *ngIf="rulesDataSource && isShowRules" >
+          <mat-table #table [dataSource]="rulesDataSource" matSort>
+  
+            <ng-container cdkColumnDef="frRanking">
+              <mat-header-cell *cdkHeaderCellDef mat-sort-header> Failure rule ranking </mat-header-cell>
+              <mat-cell *cdkCellDef="let rule">
+                <div class="circle-dt" [style.background]="rule.frRankColor">
+                  {{rule.frRanking}}
+                </div>
+              </mat-cell>
+            </ng-container>
+  
+            <ng-container cdkColumnDef="rule">
+              <mat-header-cell *cdkHeaderCellDef mat-sort-header> Rule </mat-header-cell>
+              <mat-cell *cdkCellDef="let rule"> {{rule.rule}} </mat-cell>
+            </ng-container>
+  
+            <ng-container cdkColumnDef="probability">
+              <mat-header-cell *cdkHeaderCellDef mat-sort-header> Probability of Failure If TRUE </mat-header-cell>
+              <mat-cell *cdkCellDef="let rule"> {{rule.probability}} </mat-cell>
+            </ng-container>
+  
+            <mat-header-row *cdkHeaderRowDef="rulesDisplayedColumns"></mat-header-row>
+            <mat-row *cdkRowDef="let row; columns: rulesDisplayedColumns;"></mat-row>
+  
+          </mat-table>
+  
+        </div>
+
+  </div>

@@ -1,0 +1,153 @@
+{
+  "rankList": [
+    {
+      "productId": "W757",
+      "stepId": "stepid1",
+      "vesselId": "",
+      "caseId": "caseid1",
+      "paramName": "missing activity",
+      "paramRank": "5",
+      "paramValue": "34"
+    },
+    {
+      "productId": "W758",
+      "stepId": "stepid2",
+      "vesselId": "",
+      "caseId": "caseid2",
+      "paramName": "missing activity",
+      "paramRank": "7",
+      "paramValue": "82"
+    },
+    {
+      "productId": "W759",
+      "stepId": "stepid3",
+      "vesselId": "",
+      "caseId": "caseid3",
+      "paramName": "unfinished",
+      "paramRank": "2",
+      "paramValue": "56"
+    },
+    {
+      "productId": "W760",
+      "stepId": "stepid4",
+      "vesselId": "",
+      "caseId": "caseid4",
+      "paramName": "finished",
+      "paramRank": "8",
+      "paramValue": "90"
+    },
+    {
+      "productId": "W761",
+      "stepId": "stepid5",
+      "vesselId": "",
+      "caseId": "caseid5",
+      "paramName": "finished",
+      "paramRank": "3",
+      "paramValue": "67"
+    },
+    {
+      "productId": "W762",
+      "stepId": "stepid6",
+      "vesselId": "",
+      "caseId": "caseid6",
+      "paramName": "missing activity",
+      "paramRank": "10",
+      "paramValue": "56"
+    },
+    {
+      "productId": "W763",
+      "stepId": "stepid7",
+      "vesselId": "",
+      "caseId": "caseid7",
+      "paramName": "unfinished",
+      "paramRank": "11",
+      "paramValue": "33"
+    }
+  ],
+  "processMining": [
+    {
+      "productId":"W757",
+      "shift": {
+        "type":"mins",
+        "value":"3/12.7"
+      },
+      "cycleTime": "2/0",
+      "productName": "DIW ADD 1",
+      "yield": "50",
+      "location": "Los Angeles",
+      "context": "Process Error"
+    },
+    {
+      "productId":"W758",
+      "shift": {
+        "type":"mins",
+        "value":"3/11.1"
+      },
+      "cycleTime": "2/0",
+      "productName": "DIW ADD 2",
+      "yield": "76",
+      "location": "Paris",
+      "context": "Process Clear"
+    },
+    {
+      "productId":"W759",
+      "shift": {
+        "type":"hrs",
+        "value":"3/1.6"
+      },
+      "cycleTime": "2/0",
+      "productName": "DIW ADD 3",
+      "yield": "92",
+      "location": "Chicago",
+      "context": "Process Clear"
+    },
+    {
+      "productId":"W760",
+      "shift": {
+        "type":"mins",
+        "value":"3/25.2"
+      },
+      "cycleTime": "2/0",
+      "productName": "DIW ADD 4",
+      "yield": "33",
+      "location": "Dublin",
+      "context": "Process Error"
+    },
+    {
+      "productId":"W761",
+      "shift": {
+        "type":"hrs",
+        "value":"3/2.8"
+      },
+      "cycleTime": "2/0",
+      "productName": "DIW ADD 5",
+      "yield": "78",
+      "location": "Vanice",
+      "context": "Process Clear"
+    },
+    {
+      "productId":"W762",
+      "shift": {
+        "type":"mins",
+        "value":"3/12.4"
+      },
+      "cycleTime": "2/0",
+      "productName": "DIW ADD 6",
+      "yield": "23",
+      "location": "Camaran",
+      "context": "Process Error"
+    },
+    {
+      "productId":"W763",
+      "shift": {
+        "type":"hrs",
+        "value":"3/7.2"
+      },
+      "cycleTime": "2/0",
+      "productName": "DIW ADD 7",
+      "yield": "92",
+      "location": "shanghi",
+      "context": "Process Clear"
+    }
+  ]
+}

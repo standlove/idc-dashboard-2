@@ -1,0 +1,218 @@
+{
+    "variableRank": [
+        {
+            "rank": "1",
+            "paramName": "Test Name 1",
+            "dtValue": "5",
+            "variableValue": "2.5",
+            "highlightColor": "#ff0000"
+        },
+        {
+            "rank": "2",
+            "paramName": "Test Name 2",
+            "dtValue": "3",
+            "variableValue": "3.5",
+            "highlightColor": "#ff6600"
+        },
+        {
+            "rank": "3",
+            "paramName": "Test Name 3",
+            "dtValue": "4",
+            "variableValue": "4.2",
+            "highlightColor": "#0066ff"
+        },
+        {
+            "rank": "4",
+            "paramName": "test Name 4",
+            "dtValue": "5",
+            "variableValue": "2.25",
+            "highlightColor": "#ffffff"
+        },
+        {
+            "rank": "5",
+            "paramName": "Test name 5",
+            "dtValue": "4",
+            "variableValue": "3.15",
+            "highlightColor": "#ffffff"
+        },
+        {
+            "rank": "6",
+            "paramName": "Test Name 6",
+            "dtValue": "4",
+            "variableValue": "2.2",
+            "highlightColor": "#ffffff"
+        }
+    ],
+    "rules": [
+        {
+            "frRanking": "1",
+            "rule": "Test Rule 1",
+            "probability": "75",
+            "failSamplesRule": "Test Fail Rule 1",
+            "goodSamplesRule": "Test Good Rule 1",
+            "%failSampleRule": "57",
+            "%goodSampleRule": "89",
+            "frRankColor": "#ff0000"
+        },
+        {
+            "frRanking": "2",
+            "rule": "Test Rule 2",
+            "probability": "83",
+            "failSamplesRule": "Test Fail Rule 2",
+            "goodSamplesRule": "Test Good Rule 2",
+            "%failSampleRule": "74",
+            "%goodSampleRule": "62",
+            "frRankColor": "#ff6600"
+        },
+        {
+            "frRanking": "3",
+            "rule": "Test Rule 3",
+            "probability": "80",
+            "failSamplesRule": "Test Fail Rule 3",
+            "goodSamplesRule": "Test Good Rule 3",
+            "%failSampleRule": "23",
+            "%goodSampleRule": "75",
+            "frRankColor": "#0066ff"
+        },
+        {
+            "frRanking": "4",
+            "rule": "Test Rule 4",
+            "probability": "60",
+            "failSamplesRule": "Test Fail Rule 4",
+            "goodSamplesRule": "Test Good Rule 4",
+            "%failSampleRule": "44",
+            "%goodSampleRule": "70",
+            "frRankColor": "#ffffff"
+        },
+        {
+            "frRanking": "5",
+            "rule": "Test Rule 5",
+            "probability": "70",
+            "failSamplesRule": "Test Fail Rule 5",
+            "goodSamplesRule": "Test Good Rule 5",
+            "%failSampleRule": "71",
+            "%goodSampleRule": "69",
+            "frRankColor": "#ffffff"
+        },
+        {
+            "frRanking": "6",
+            "rule": "Test Rule 6",
+            "probability": "40",
+            "failSamplesRule": "Test Fail Rule 6",
+            "goodSamplesRule": "Test Good Rule 6",
+            "%failSampleRule": "23",
+            "%goodSampleRule": "68",
+            "frRankColor": "#ffffff"
+        }
+    ],
+    "ruleData": [
+        {
+            "id": "1",
+            "variableTrend": "1.2",
+            "color": "#ff0000"
+        },
+        {
+            "id": "2",
+            "variableTrend": "2.5",
+            "color": "#ff0000"
+        },
+        {
+            "id": "3",
+            "variableTrend": "1.6",
+            "color": "#0066ff"
+        },
+        {
+            "id": "4",
+            "variableTrend": "2.2",
+            "color": "#ff0000"
+        },
+        {
+            "id": "5",
+            "variableTrend": "1.8",
+            "color": "#ff0000"
+        },
+        {
+            "id": "6",
+            "variableTrend": "1.9",
+            "color": "#ff0000"
+        },
+        {
+            "id": "7",
+            "variableTrend": "2.3",
+            "color": "#0066ff"
+        },
+        {
+            "id": "8",
+            "variableTrend": "1.7",
+            "color": "#ff0000"
+        },
+        {
+            "id": "9",
+            "variableTrend": "2.0",
+            "color": "#0066ff"
+        },
+        {
+            "id": "10",
+            "variableTrend": "2.4",
+            "color": "#ff0000"
+        },
+        {
+            "id": "11",
+            "variableTrend": "2.1",
+            "color": "#ff0000"
+        },
+        {
+            "id": "12",
+            "variableTrend": "2.5",
+            "color": "#0066ff"
+        },
+        {
+            "id": "13",
+            "variableTrend": "1.8",
+            "color": "#0066ff"
+        },
+        {
+            "id": "14",
+            "variableTrend": "2.1",
+            "color": "#ff0000"
+        },
+        {
+            "id": "15",
+            "variableTrend": "2.4",
+            "color": "#ff0000"
+        },
+        {
+            "id": "16",
+            "variableTrend": "2.2",
+            "color": "#0066ff"
+        },
+        {
+            "id": "17",
+            "variableTrend": "1.8",
+            "color": "#ff0000"
+        },
+        {
+            "id": "18",
+            "variableTrend": "2.3",
+            "color": "#0066ff"
+        },
+        {
+            "id": "19",
+            "variableTrend": "1.6",
+            "color": "#0066ff"
+        },
+        {
+            "id": "20",
+            "variableTrend": "1.8",
+            "color": "#0066ff"
+        },
+        {
+            "id": "21",
+            "variableTrend": "2.2",
+            "color": "#0066ff"
+        }
+    ],
+    "decisionTree": [
+        {}
+    ]
+}

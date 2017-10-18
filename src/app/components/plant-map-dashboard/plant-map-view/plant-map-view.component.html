@@ -1,0 +1,55 @@
+<!-- <agm-map 
+[latitude]="lat" 
+[longitude]="lng" 
+[zoom]="zoom" 
+[disableDefaultUI]="false" 
+[zoomControl]="true" 
+[zoomControlOptions]="zoomControlOptions"
+[fullscreenControl]="true"
+[scaleControl]="true"> -->
+
+<agm-map 
+[latitude]="lat" 
+[longitude]="lng" 
+[zoom]="zoom" 
+[disableDefaultUI]="false"
+[zoomControl]="false"
+[scaleControl]="true"
+[scaleControlOptions]="scaleControlOptions"
+[zoomControlOptions]="zoomControlOptions"
+[fullscreenControl]="false"
+[fullscreenControlOptions]="fullscreenControlOptions"
+[streetViewControl]="'false'"
+[mapTypeControl]="'true'"
+[mapTypeControlOptions]="mapTypeControlOptions"
+>
+
+  <agm-marker *ngFor="let plant of plants" [latitude]="plant.latitude" [longitude]="plant.longitude" (mouseOver)="markerMouseOver($event, plant)"
+    (mouseOut)="mouseOut($event, plant)" (markerClick)="markerClick($event, plant)" >
+    <agm-snazzy-info-window [isOpen]="plant.isOpen" [maxWidth]="200" [closeOnMapClick]="false" [closeWhenOthersOpen]="true" (afterClose)="afterCloseInfoWindow($event, plant)"
+      [showCloseButton]="false" [padding]="'0px'" [borderRadius]="'5%'">
+      <ng-template>
+        <div class="map-content {{plant.isClicked ? '' : 'p-2'}}">
+          <div class="col p-2 title title-border-bottom font-weight-bold {{(plant.isClicked && plant.yield > 50) ? 'bg-success text-center clicked' : ''}} {{(plant.isClicked && plant.yield < 50) ?  'bg-danger text-center clicked' : ''}}">{{plant.plantName}}</div>
+          <div class="w-100"></div>
+          <div class="col p-2 list" *ngIf="!plant.isClicked">
+              <ul class="list-item" >
+                  <li class="py-2" *ngFor="let performance of plant.quiltyPerformance">
+                    <span class="text-left {{ performance.value > 50 ? 'text-success' : 'text-danger'}}">
+                      <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="text-left m2">{{performance.code}}</span>
+                    <span class="align-right {{ performance.value > 50 ? 'text-success' : 'text-danger'}}">{{performance.value}} %</span>
+                  </li>
+                </ul>
+          </div>
+          <div class="w-100"></div>
+          <div class="col p-2 text-center {{ plant.yield > 50 ? 'text-success' : 'text-danger'}} font-weight-bold" *ngIf="plant.isClicked">
+            {{plant.yield}}
+          </div>
+        </div>
+
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
+</agm-map>

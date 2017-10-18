@@ -1,0 +1,28 @@
+<div class="input-group typeahead h-100">
+  <!-- <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..."> -->
+  <input #inputElement [placeholder]="placeholder" [(ngModel)]="input" type="text" [ngClass]="{'form-control typeahead-input': true, 'typeahead-input-has-selection': hasSelection()}"
+    typeahead="off" spellcheck="false" (keyup)="inputKeyUp($event)" (keydown)="inputKeyDown($event)" (focus)="inputFocus($event)"
+    (blur)="inputBlur($event)" [disabled]="isDisabled" >
+
+  <input type="text" class="form-control typeahead-typeahead" [(ngModel)]="typeahead" typeahead="off" spellcheck="false" disabled="true" >
+
+  <div #suggestionsContainer class="typeahead-suggestions" [hidden]="!areSuggestionsVisible">
+
+    <ul (mouseout)="suggestionsMouseOut($event)" class="pl-0 w-100">
+
+      <li *ngFor="let suggestion of suggestions" (mouseover)="suggestionMouseOver(suggestion)" (mousedown)="suggestionMouseDown(suggestion)"
+        [ngClass]="{'typeahead-suggestion-active': activeSuggestion===suggestion}">
+        <span>{{ suggestion[displayProperty] }}</span>
+        <span class="align-right yield font-weight-bold {{ suggestion[displayPropertySecond] > 50 ? 'text-success' : 'text-danger'}}">{{suggestion[displayPropertySecond]}} %</span>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <span class="input-group-btn">
+    <button class="btn typeahead-search-btn" type="button">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+  </span>
+</div>

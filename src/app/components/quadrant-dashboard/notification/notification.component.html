@@ -1,0 +1,138 @@
+<div class="row white-bg-wrapper m-2">
+  <div class="col white-bg-wrapper py-3">
+
+    <div class="row title-border-bottom ">
+      <div class="col">
+        <span class="align-middle">
+          <a class="btn btn-primary">
+            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          </a>
+        </span>
+
+        <span class="font-weight-bold align-middle">Alerts and Notification</span>
+      </div>
+
+      <div class="col-auto tab-header pb-3 h-75 serch-box" (click)="showProcessMining()">
+        <div class="m-0 h-100">
+          <div class="input-group ">
+            <input type="text" class="form-control" placeholder="Search for..." >
+            <span class="input-group-btn">
+                <button class="btn" type="button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>            
+                </span>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!isLoadedMiqDashBoard" class="col-auto" (click)="maximize()">
+        <span class="align-middle">
+          <i class="fa fa-window-maximize" aria-hidden="true"></i>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="w-100"></div>
+
+
+  <div class="col data-table">
+    <div *ngIf="dataSource">
+      <mat-table #table [dataSource]="dataSource" matSort>
+
+        <ng-container cdkColumnDef="product">
+          <mat-header-cell *cdkHeaderCellDef [ngClass]="'not-tbl-col-1'" mat-sort-header> Product </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank" [ngClass]="'not-tbl-col-1'" > {{rank.product}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="stepId">
+          <mat-header-cell [ngClass]="'not-tbl-col-2'" *cdkHeaderCellDef mat-sort-header> Step ID </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank" [ngClass]="'not-tbl-col-2'"> {{rank.stepId}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="Observation">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header [ngClass]="'not-tbl-col-2'"> Observation </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank" [ngClass]="'not-tbl-col-2'">
+            <div class="row">
+              <div class="col">{{rank.Observation}} </div>
+              <div class="col-auto mb-2">
+                <button class="btn btn-primary">View</button>
+                <button class="btn btn-info" (click)="openSendMessageModal(messageModal)">Send</button>
+              </div>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </mat-table>
+
+    </div>
+  </div>
+</div>
+
+<ng-template #messageModal let-c="close" let-d="dismiss">
+    <div class="p-3">
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  <div class="modal-body">
+    
+    <div class="h-100 justify-content-center align-items-center ">
+      <div class="col font-weight-bold text-center pt-6">Send Message</div>
+      <div class="col-100"></div>
+      <div class="col text-center form-secondry-text">Alerts and Notifications</div>
+      <div class="col-100 pt-6"></div>
+      <div class="col px-6" *ngIf="!showSuccessMessage" >
+        <form #messageForm="ngForm" novalidate (ngSubmit)="onSubmit(messageForm)">
+          <div class="row">
+            <div class="col-md-12 p-3">
+              <input type="text" [(ngModel)]="messageModel.name"  name="name" class="form-control" placeholder="Name" #name="ngModel" required>
+              <div *ngIf="name.invalid && (name.dirty || name.touched || messageSubmit)" class="px-2 text-danger">
+                <div class="error" *ngIf="name.errors.required">
+                  Name is required.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 p-3">
+              <input type="text"  [(ngModel)]="messageModel.phoneNumber"  name="phoneNumber" #phoneNumber="ngModel" class="form-control" placeholder="Phone Number" required>
+              <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched || messageSubmit)" class="p-2 text-danger">
+                  <div class="error" *ngIf="phoneNumber.errors.required">
+                    Phone Number is required.
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-12 p-3">
+              <input type="text"  [(ngModel)]="messageModel.content" #content="ngModel" name="content" class="form-control" placeholder="Content" required>
+              <div *ngIf="content.invalid && (content.dirty || content.touched || messageSubmit)" class="p-2 text-danger">
+                  <div class="error" *ngIf="content.errors.required">
+                    Content is required.
+                  </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="col text-center white-bg-wrapper">
+            <button class="btn btn-primary" type="submit" >Send</button>
+          </div>
+        </form>
+      </div>
+      <div *ngIf="showSuccessMessage" class="col text-center text-success">
+        <i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>
+      </div>
+      <div class="col-100"></div>
+
+      <div *ngIf="showSuccessMessage" class="col text-center form-secondry-text">Your message has successfully sent to</div>
+      <div class="col-100"></div>
+      <div *ngIf="showSuccessMessage" class="col font-weight-bold text-center">
+          {{messageModel.name }} - {{messageModel.phoneNumber}}
+      </div>
+    </div>
+
+  </div>
+
+</ng-template>

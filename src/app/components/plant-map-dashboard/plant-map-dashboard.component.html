@@ -1,0 +1,33 @@
+  <div class="row map-canvas-panel-ani">
+    <div class="{{ isDisplayDetPanel ? 'col-lg-9 col-md-9 ' : 'col-lg-12 col-md-12'}} map-nav-bar">
+      <div class="row ">
+        <div class="col ml-3">
+          <a class="btn btn-primary">
+            <i class="fa fa-building" aria-hidden="true"></i>
+          </a>
+          <span>
+            <b>{{isMapView ? 'Plant Map' : 'Plant List'}}</b>
+          </span>
+        </div>
+
+        <div class="col-auto {{ !isDisplayDetPanel ? 'mr-3' : ''}}">
+          <a (click)="isMapView=true;" class="btn {{isMapView ? 'btn-success':'btn-light'}}">
+            <i class="fa fa-map-o" aria-hidden="true"></i>
+          </a>
+          <a (click)="isMapView=false;" class="ml-3 btn {{!isMapView ? 'btn-success':'btn-light'}}">
+            <i class="fa fa-list-ul" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="{{ isDisplayDetPanel ? 'col-lg-9 col-md-9 pr-0 pl-2' : 'col-lg-12 col-md-12 px-2'}}">
+      <app-plant-map-view *ngIf="isMapView"></app-plant-map-view>
+      <app-plant-list-view *ngIf="!isMapView"></app-plant-list-view>
+    </div>
+    <div class="{{ isDisplayDetPanel ? 'col' : 'd-none'}} white-bg-wrapper">
+      <app-plant-detail-view></app-plant-detail-view>
+    </div>
+  </div>
+

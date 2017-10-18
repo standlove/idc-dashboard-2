@@ -1,0 +1,91 @@
+<div class="gray-bg-wrapper m-2">
+  <div class="col white-bg-wrapper py-3">
+
+    <div class="row title-border-bottom ">
+      <div class="col px-3">
+        <span class="align-middle">
+          <a class="btn btn-primary">
+            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          </a>
+        </span>
+
+        <span class="font-weight-bold align-middle">MIQ View</span>
+      </div>
+
+      <div class="col-auto  tab-header" (click)="showDailyChart()">
+        <div class="m-0 h-100">
+          <div class="align-middle pb-3 h-75 {{isDaily ? 'text-success' : ''}}">Daily</div>
+          <div class="align-bottom mx-auto w-75 h-25 p-1 {{isDaily ? 'tab-border-success' : ''}} "></div>
+        </div>
+      </div>
+      <div class="col-auto tab-header" (click)="showWeeklyChart()">
+        <div class="m-0 h-100">
+          <div class="align-middle pb-3 h-75 {{isWeekly ? 'text-success' : ''}}">Weekly</div>
+          <div class="align-bottom mx-auto w-75 h-25 p-1 {{isWeekly ? 'tab-border-success' : ''}} "></div>
+        </div>
+      </div>
+      <div class="col-auto tab-header" (click)="showMonthlyChart()">
+        <div class="m-0 h-100">
+          <div class="align-middle pb-3 h-75 {{isMonthly ? 'text-success' : ''}}">Monthly</div>
+          <div class="align-bottom mx-auto w-75 h-25 p-1 {{isMonthly ? 'tab-border-success' : ''}} "></div>
+        </div>
+      </div>
+      <div *ngIf="!isLoadedMiqDashBoard" class="col-auto" (click)="maximize()">
+        <span class="align-middle">
+          <i class="fa fa-window-maximize" aria-hidden="true"></i>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="w-100"></div>
+
+  <div class="col white-bg-wrapper">
+    <div class="row">
+      <div class="col">
+        <span>Plant</span>
+        <span>
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span>
+        <span>Equipment</span>
+        <span>
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span>
+        <span>Product</span>
+        <span>
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span>
+        <span>Batch 125</span>
+      </div>
+      <div class="col-auto">Default
+        <div class="dropdown">
+          <i class="fa fa-cog dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            aria-hidden="true"></i>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" (click)="isLineChart = true">Default</a>
+            <a class="dropdown-item" (click)="isLineChart = true">Line Graph</a>
+            <a class="dropdown-item" (click)="isLineChart = false">Bar Graph</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="w-100"></div>
+  <div class="col white-bg-wrapper">
+    <div style="display: block;" *ngIf="isLineChart">
+      <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="chartLegend"
+        [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+
+    <div style="display: block" *ngIf="!isLineChart">
+      <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="barChartOptions" [legend]="chartLegend" [chartType]="barChartType"
+        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+
+  </div>
+
+</div>

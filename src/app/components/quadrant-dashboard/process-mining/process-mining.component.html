@@ -1,0 +1,84 @@
+<div class="row white-bg-wrapper m-2">
+  <div class="col white-bg-wrapper py-3">
+
+    <div class="row title-border-bottom ">
+      <div class="col">
+        <span class="align-middle">
+          <a class="btn btn-primary">
+            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          </a>
+        </span>
+
+        <span class="font-weight-bold align-middle">Process Mining</span>
+      </div>
+
+      <div class="col-auto tab-header" (click)="showProcessMining()">
+        <div class="m-0 h-100">
+          <div class="align-middle pb-3 h-75 {{isPMView ? 'text-success' : ''}}">Process Mining View</div>
+          <div class="align-bottom mx-auto w-75 h-25 p-1 {{isPMView ? 'tab-border-success' : ''}} "></div>
+        </div>
+      </div>
+      <div class="col-auto tab-header" (click)="showRankList()">
+        <div class="m-0 h-100">
+          <div class="align-middle pb-3 h-75 {{isRankList ? 'text-success' : ''}}">Rank List</div>
+          <div class="align-bottom mx-auto w-75 h-25 p-1 {{isRankList ? 'tab-border-success' : ''}} "></div>
+        </div>
+      </div>
+      <div *ngIf="!isLoadedMiqDashBoard" class="col-auto" (click)="maximize()">
+        <span class="align-middle">
+          <i class="fa fa-window-maximize" aria-hidden="true"></i>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="w-100"></div>
+
+  <div class="col data-table">
+    <div *ngIf="dataSource && isRankList" >
+      <mat-table #table [dataSource]="dataSource" matSort>
+
+        <ng-container cdkColumnDef="productId">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header> Product Id </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank"> {{rank.productId}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="stepId">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header> Step Id </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank"> {{rank.stepId}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="vesselId">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header> Vessel ID </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank"> {{rank.vesselId}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="caseId">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header> Case Id </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank"> {{rank.caseId}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="paramName">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header> Parameter Name </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank"> {{rank.paramName}} </mat-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="paramRank">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header> Parameter Rank </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank"> {{rank.paramRank}} </mat-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="paramValue">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header> Parameter Value </mat-header-cell>
+          <mat-cell *cdkCellDef="let rank"> {{rank.paramValue}} </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </mat-table>
+
+    </div>
+  </div>
+
+</div>

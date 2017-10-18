@@ -1,0 +1,68 @@
+<div *ngIf="plant" class="row">
+  <div class="col white-bg-wrapper py-3 pl-3">
+    <a class="btn btn-primary">
+      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+    </a>
+    <span>
+      <b>Equipment</b>
+    </span>
+  </div>
+  <div class="w-100"></div>
+  <div class="col white-bg-wrapper">
+    <ul class="list-item equ-list border-top">
+      <li class="py-2 title-border-bottom" *ngFor="let equipment of plant.equipments">
+        <div (click)="equipment.selected = equipment.selected ? false : true;">
+          <i class="fa {{equipment.selected ? 'fa-minus':'fa-plus'}}" aria-hidden="true"></i>
+          <span>{{equipment.name}}</span>
+          <span class="align-right {{ (equipment.value > 50) ? 'text-success' : 'text-danger'}}"><b>{{equipment.value}}%</b></span>
+        </div>
+        <ul class="list-item ml-3 product-list" *ngIf="equipment.selected">
+          <li class="py-2" *ngFor="let product of equipment.products">
+            <div (click)="product.selected = product.selected ? false : true;">
+              <i class="fa {{product.selected ? 'fa-minus':'fa-plus'}}" aria-hidden="true"></i>
+              <span>{{product.name}}</span>
+              <span class="align-right {{ product.value > 50 ? 'text-success' : 'text-danger'}}"><b>{{product.value}}%</b></span>
+            </div>
+            <ul class="list-item ml-3 batch-list" *ngIf="product.selected">
+              <li class="py-2" *ngFor="let item of product.batch">
+                <mat-checkbox (change)="selectBatch(item)">{{item.name}}</mat-checkbox>
+                <span class="align-right {{ product.value > 50 ? 'text-success' : 'text-danger'}}"><b>{{product.value}}%</b></span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="w-100 my-3"></div>
+  <div class="col white-bg-wrapper py-3 pl-3">
+    <a class="btn btn-primary">
+      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+    </a>
+    <span>
+      <b>Quality Performance</b>
+    </span>
+  </div>
+  <div class="w-100"></div>
+
+  <div class="col white-bg-wrapper">
+      <div class="d-flex flex-wrap mt-3">
+          <div *ngFor="let quilty of plant.quiltyPerformance" class="m-2 p-1 qulity-box-width performance-box box-shaddow text-center">
+              
+              <div class="value {{ quilty.isIncrement ? 'text-success': 'text-danger'}} font-weight-bold">
+                <i *ngIf="quilty.isIncrement" class="fa fa-caret-up" aria-hidden="true"></i> 
+                <i *ngIf="!quilty.isIncrement" class="fa fa-caret-down" aria-hidden="true"></i>
+                {{quilty.value}}%
+              </div>
+              <div class="name">{{quilty.name}}</div>
+          </div>
+      </div>
+
+     
+  </div>
+  <div class="w-100"></div>
+  <div class="col text-center white-bg-wrapper">
+    <button class="btn btn-success" [disabled]="!isBatchSelected" (click)="goToMiq()">Submit</button>
+  </div>
+</div>

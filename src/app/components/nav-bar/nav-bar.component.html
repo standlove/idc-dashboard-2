@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light top-nav-bar box-shaddow  white-bg-wrapper p-0">
+    <a class="navbar-brand align-middle">
+      <img src="/assets/images/icons/logo.jpg" width="60" height="60" class="d-inline-block " alt=""> {{title}}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
+    <div class="h-100 ml-auto">
+      <app-typeahead [(ngModel)]="selectedPlant" [list]="plants" [searchProperty]="'plantName'" [displayProperty]="'plantName'"
+        [displayPropertySecond]="'yield'" [maxSuggestions]="10" (suggestionSelected)="plantSelected($event)" [groupBy]="'region'"
+        placeholder="Plant Search">
+      </app-typeahead>
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link px-3 icon-separator">
+        <i class="fa fa-print fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-3 icon-separator">
+        <i class="fa fa-bell-o fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-3 icon-separator">
+        <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Hi,
+          <span class="font-weight-bold text-success">John Doe</span>
+        </a>
+      </li>
+
+    </ul>
+    <div class="h-100">
+      <a class="align-middle">
+        <img src="/assets/images/icons/user.png" alt="">
+      </a>
+    </div>
+
+  </div>
+</nav>

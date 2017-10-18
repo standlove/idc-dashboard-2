@@ -1,0 +1,54 @@
+<div class="row " *ngIf="miqData">
+  <div class="col-lg-9 col-md-9 pr-0">
+    <app-miq-view></app-miq-view>
+  </div>
+
+  <div class="col pl-0 mr-2 ml-2">
+      <!-- <div class="row "> -->
+          <div class="col white-bg-wrapper title-border-bottom p-3 mt-2">
+              <a class="btn btn-primary">
+                  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                </a>
+                <span class="title ">Top 5 Products</span>
+                <span class="socondry-text socondry-text-align-right">This Months</span>
+              <div>
+
+              </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col white-bg-wrapper p-3" >
+              <ul class="list-item">
+                  <li *ngFor="let product of miqData.topProducts">
+                    <i class="fa fa-circle" [style.color]="product.color" aria-hidden="true"></i>
+                    <span>{{product.productName}}</span>
+                    <span class="socondry-text align-right">{{product.plantName}}</span>
+                  </li>
+                </ul>
+          </div>
+          <div class="w-100 mt-3"></div>
+          <div class="col white-bg-wrapper title-border-bottom p-3">
+              <div class="d-flex flex-row justify-content-between title-bar">
+                  <div class="title">
+                    <a class="btn btn-primary">
+                      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    </a>
+                    <span>Drop History</span>
+                  </div>
+                </div>
+          </div>
+          <div class="w-100 "></div>
+          <div class="col white-bg-wrapper p-3" >
+              <ul class="list-item">
+                  <li *ngFor="let drop of miqData.dropHistory">
+                    <i class="fa fa-circle-o" aria-hidden="true"></i>
+                    <span>{{drop.date}}</span>
+                    <span>{{drop.productName}}</span>
+                  </li>
+                </ul>
+          </div>
+        <!-- </div> -->
+        
+        
+
+  </div>
+</div>
